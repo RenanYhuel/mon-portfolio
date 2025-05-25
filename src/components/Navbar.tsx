@@ -80,7 +80,7 @@ export default function Navbar() {
 
 	return (
 		<>
-			<div className="fixed top-4 left-0 w-full z-50 px-4 md:px-8 pointer-events-none">
+			<div className="w-full px-4 py-4 md:px-8 pointer-events-none">
 				<nav
 					className={`mx-auto rounded-2xl border border-border bg-card/80 shadow-xl backdrop-blur-md flex items-center justify-between gap-16 px-4 md:px-8 py-3 pointer-events-auto transition-colors duration-300 ${
 						scrolled ? "bg-card/95" : "bg-card/80"
