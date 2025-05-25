@@ -5,8 +5,9 @@ export default function Footer() {
   return (
     <div className="w-full px-4 py-4 md:px-8 md:py-4">
       <footer className="w-full flex items-center justify-between px-4 md:px-8 py-6 border border-border bg-card/95 text-muted-foreground text-sm rounded-2xl shadow-xl">
-        <div>
-          &copy; {new Date().getFullYear()} Renan Yhuel. Tous droits réservés.
+        <div className="mb-2 md:mb-0 md:text-left w-full md:w-auto">
+          &copy; {new Date().getFullYear()} Renan Yhuel.{" "}
+          <span className="block md:inline">Tous droits réservés.</span>
         </div>
         <div className="flex items-center gap-4">
           <a
