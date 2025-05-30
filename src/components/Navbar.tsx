@@ -107,7 +107,7 @@ export default function Navbar() {
 											href={link.href}
 											target="_blank"
 											rel="noopener noreferrer"
-											className="flex items-center gap-1.5 text-foreground hover:text-primary transition-colors px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary group"
+											className="flex items-center gap-1.5 text-foreground hover:text-primary transition-colors px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary group cursor-pointer"
 											tabIndex={0}
 										>
 											{link.icon}
@@ -118,7 +118,7 @@ export default function Navbar() {
 										<a
 											href={link.href}
 											onClick={e => handleNavClick(e, link.href)}
-											className="flex items-center gap-1.5 text-foreground hover:text-primary transition-colors px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+											className="flex items-center gap-1.5 text-foreground hover:text-primary transition-colors px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer"
 											tabIndex={0}
 										>
 											{link.icon}
@@ -133,7 +133,7 @@ export default function Navbar() {
 							<button
 								aria-label="Basculer le thème clair/sombre"
 								onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-								className="hidden md:flex items-center justify-center w-10 h-10 rounded-full border border-border bg-muted hover:bg-accent transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
+								className="hidden md:flex items-center justify-center w-10 h-10 rounded-full border border-border bg-muted hover:bg-accent transition-colors focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer"
 								type="button"
 							>
 								{theme === "dark" ? <Moon size={20} className="text-primary" /> : <Sun size={20} className="text-primary" />}
@@ -181,7 +181,7 @@ export default function Navbar() {
 											href={link.href}
 											target="_blank"
 											rel="noopener noreferrer"
-											className="flex items-center justify-center gap-2 text-foreground hover:text-primary transition-colors px-3 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary group text-lg font-medium"
+											className="flex items-center justify-center gap-2 text-foreground hover:text-primary transition-colors px-3 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary group text-lg font-medium cursor-pointer"
 											tabIndex={0}
 											onClick={() => setMenuOpen(false)}
 										>
@@ -193,7 +193,7 @@ export default function Navbar() {
 										<a
 											href={link.href}
 											onClick={e => { handleNavClick(e, link.href); setMenuOpen(false); }}
-											className="flex items-center justify-center gap-2 text-foreground hover:text-primary transition-colors px-3 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-lg font-medium"
+											className="flex items-center justify-center gap-2 text-foreground hover:text-primary transition-colors px-3 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-lg font-medium cursor-pointer"
 											tabIndex={0}
 										>
 											{link.icon}
@@ -208,7 +208,7 @@ export default function Navbar() {
 							<button
 								aria-label="Basculer le thème clair/sombre"
 								onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-								className="flex items-center justify-center w-12 h-12 rounded-full border border-border bg-muted hover:bg-accent transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
+								className="flex items-center justify-center w-12 h-12 rounded-full border border-border bg-muted hover:bg-accent transition-colors focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer"
 								type="button"
 							>
 								{theme === "dark" ? <Moon size={24} className="text-primary" /> : <Sun size={24} className="text-primary" />}
