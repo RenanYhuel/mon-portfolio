@@ -88,70 +88,72 @@ export default function Navbar() {
 					style={{ height: 72 }}
 					aria-label="Barre de navigation principale"
 				>
-					<div className="flex items-center w-full justify-between gap-16">
-						{/* Logo */}
-						<Link
-							href="#accueil"
-							aria-label="Accueil"
-							onClick={e => handleNavClick(e as any, "#accueil")}
-							className="flex items-center gap-3 cursor-pointer select-none"
-						>
-							<span className="font-extrabold text-xl md:text-2xl tracking-widest uppercase font-sans" style={{ color: 'var(--foreground)' }}>RenanYhuel</span>
-						</Link>
-						{/* Desktop menu */}
-						<ul className="hidden md:flex gap-6 items-center">
-							{NAV_LINKS.map(link => (
-								<li key={link.href}>
-									{link.external ? (
-										<a
-											href={link.href}
-											target="_blank"
-											rel="noopener noreferrer"
-											className="flex items-center gap-1.5 text-foreground hover:text-primary transition-colors px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary group cursor-pointer"
-											tabIndex={0}
-										>
-											{link.icon}
-											<span className="font-medium text-base">{link.label}</span>
-											<ArrowUpRight size={16} className="ml-0.5 text-muted-foreground group-hover:text-primary" />
-										</a>
+					<div className="flex items-center w-full justify-between gap-4 max-w-screen-xl mx-auto min-w-0">
+						<div className="flex items-center w-full justify-between gap-16">
+							{/* Logo */}
+							<Link
+								href="#accueil"
+								aria-label="Accueil"
+								onClick={e => handleNavClick(e as any, "#accueil")}
+								className="flex items-center gap-3 cursor-pointer select-none"
+							>
+								<span className="font-extrabold text-xl md:text-2xl tracking-widest uppercase font-sans" style={{ color: 'var(--foreground)' }}>RenanYhuel</span>
+							</Link>
+							{/* Desktop menu */}
+							<ul className="hidden [@media(max-width:1099px)]:hidden [@media(min-width:1100px)]:flex gap-6 items-center">
+								{NAV_LINKS.map(link => (
+									<li key={link.href}>
+										{link.external ? (
+											<a
+												href={link.href}
+												target="_blank"
+												rel="noopener noreferrer"
+												className="flex items-center gap-1.5 text-foreground hover:text-primary transition-colors px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary group cursor-pointer"
+												tabIndex={0}
+											>
+												{link.icon}
+												<span className="font-medium text-base">{link.label}</span>
+												<ArrowUpRight size={16} className="ml-0.5 text-muted-foreground group-hover:text-primary" />
+											</a>
+										) : (
+											<a
+												href={link.href}
+												onClick={e => handleNavClick(e, link.href)}
+												className="flex items-center gap-1.5 text-foreground hover:text-primary transition-colors px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer"
+												tabIndex={0}
+											>
+												{link.icon}
+												<span className="font-medium text-base">{link.label}</span>
+											</a>
+										)}
+									</li>
+								))}
+							</ul>
+							<div className="flex items-center gap-3">
+								{/* Switch thème (desktop) */}
+								<button
+									aria-label="Basculer le thème clair/sombre"
+									onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+									className="hidden [@media(max-width:1099px)]:hidden [@media(min-width:1100px)]:flex items-center justify-center w-10 h-10 rounded-full border border-border bg-muted hover:bg-accent transition-colors focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer"
+									type="button"
+								>
+									{theme === "dark" ? <Moon size={20} className="text-primary" /> : <Sun size={20} className="text-primary" />}
+								</button>
+								{/* Menu burger + Menu (mobile) */}
+								<Button
+									variant="ghost"
+									size="sm"
+									className="flex items-center px-3 [@media(min-width:1100px)]:hidden"
+									aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+									onClick={() => setMenuOpen(v => !v)}
+								>
+									{menuOpen ? (
+										<X size={32} className="w-8 h-8" />
 									) : (
-										<a
-											href={link.href}
-											onClick={e => handleNavClick(e, link.href)}
-											className="flex items-center gap-1.5 text-foreground hover:text-primary transition-colors px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer"
-											tabIndex={0}
-										>
-											{link.icon}
-											<span className="font-medium text-base">{link.label}</span>
-										</a>
+										<Menu size={34} className="w-14 h-14" style={{ minWidth: 32, minHeight: 32 }} />
 									)}
-								</li>
-							))}
-						</ul>
-						<div className="flex items-center gap-3">
-							{/* Switch thème (desktop) */}
-							<button
-								aria-label="Basculer le thème clair/sombre"
-								onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-								className="hidden md:flex items-center justify-center w-10 h-10 rounded-full border border-border bg-muted hover:bg-accent transition-colors focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer"
-								type="button"
-							>
-								{theme === "dark" ? <Moon size={20} className="text-primary" /> : <Sun size={20} className="text-primary" />}
-							</button>
-							{/* Menu burger + Menu (mobile) */}
-							<Button
-								variant="ghost"
-								size="sm"
-								className="flex items-center px-3 md:hidden"
-								aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
-								onClick={() => setMenuOpen(v => !v)}
-							>
-								{menuOpen ? (
-									<X size={32} className="w-8 h-8" />
-								) : (
-									<Menu size={34} className="w-14 h-14" style={{ minWidth: 32, minHeight: 32 }} />
-								)}
-							</Button>
+								</Button>
+							</div>
 						</div>
 					</div>
 				</nav>

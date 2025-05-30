@@ -80,7 +80,7 @@ export default function HeroSection() {
       className="w-full flex-1 flex items-center justify-center relative px-4 md:px-8"
       style={{ minHeight: 'calc(100vh - 138px)' }}
     >
-      <div className="flex flex-col lg:flex-row h-full flex-1 w-full max-w-[1440px] mx-auto border border-border bg-card/80 dark:bg-card/80 shadow-xl backdrop-blur-md rounded-2xl px-0 py-0 overflow-hidden transition-colors duration-300 relative z-10">
+      <div className="flex flex-col lg:flex-row h-full flex-1 w-full max-w-[1440px] mx-auto border border-border bg-card/80 dark:bg-card/80 shadow-xl backdrop-blur-md rounded-2xl px-0 py-0 overflow-hidden transition-colors duration-300 relative z-10 [@media(max-width:1099px)]:flex-col">
         {/* Partie gauche : Infos */}
         <div className="w-full lg:w-[35%] h-full flex-1 flex flex-col items-center justify-between px-8 pt-16 pb-8 bg-transparent animate-fade-in-up">
           <Avatar className="size-36 md:size-44 border-4 border-white shadow-xl transition-transform duration-300 hover:scale-110 animate-avatar-pop">
@@ -117,7 +117,7 @@ export default function HeroSection() {
           </div>
         </div>
         {/* Partie droite : large, arrondie, simple et accueillante */}
-        <div className="w-full lg:w-[65%] h-full flex flex-col items-center justify-center text-center px-10 py-24 gap-10 bg-muted/60 dark:bg-[#232323] shadow-[-16px_0_32px_-8px_rgba(99,102,241,0.10)] border-l-0 lg:border-l-4 border-primary/20 transition-all duration-300 rounded-t-3xl rounded-none lg:rounded-t-none lg:rounded-l-[56px] relative overflow-hidden animate-fade-in-up border-t-4 border-primary/20 lg:border-t-0">
+        <div className="w-full lg:w-[65%] h-full flex flex-col items-center justify-center text-center px-10 py-24 gap-10 bg-muted/60 dark:bg-[#232323] shadow-[-16px_0_32px_-8px_rgba(99,102,241,0.10)] border-l-0 lg:border-l-4 border-primary/20 transition-all duration-300 rounded-t-3xl rounded-none lg:rounded-t-none lg:rounded-l-[56px] relative overflow-hidden animate-fade-in-up border-t-4 border-primary/20 lg:border-t-0 [@media(max-width:1099px)]:rounded-t-3xl [@media(max-width:1099px)]:rounded-l-none [@media(max-width:1099px)]:border-t-4 [@media(max-width:1099px)]:border-l-0">
           <div className="flex flex-col items-center gap-6 w-full max-w-2xl mx-auto relative z-10">
             <Sparkles size={48} className="text-primary drop-shadow mb-2 animate-bounce-in" />
             <h2 className="text-2xl md:text-4xl font-extrabold text-foreground mb-2 rounded-full px-4 md:px-6 py-2 bg-white/70 dark:bg-[#232323]/60 shadow-md animate-fade-in-delay break-words leading-tight">
