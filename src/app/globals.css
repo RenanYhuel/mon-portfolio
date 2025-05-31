@@ -22,9 +22,9 @@ html, body {
   scroll-snap-type: y proximity;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 16px; /* Base font size */
-  line-height: 1.5; /* Base line height */
-  font-weight: 400; /* Base font weight */
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
