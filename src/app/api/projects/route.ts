@@ -1,19 +1,18 @@
 import { errorResponse, successResponse } from "@/lib/utils";
 import { prisma } from "@/lib/prismaClient";
 
-
-
 export async function GET() {
     const meta = {
         request_id: crypto.randomUUID(),
         api_version: 'v1.0.0',
         docs_url: null,
-        endpoint: '/api/test',
+        endpoint: '/api/projects',
     };
     try {
         await prisma.$connect();
+        const projects = await prisma.project.findMany();
         await prisma.$disconnect();
-        return Response.json(successResponse(undefined, meta));
+        return Response.json(successResponse(projects, meta));
     } catch (error) {
         return Response.json(
             errorResponse(
