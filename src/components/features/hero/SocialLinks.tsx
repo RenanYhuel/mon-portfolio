@@ -14,7 +14,7 @@ export function SocialLinks() {
                     target={href.startsWith('http') ? '_blank' : undefined}
                     rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
                     aria-label={label}
-                    className="group p-2 sm:p-3 rounded-full bg-background border border-border text-foreground shadow transition-all duration-200 hover:bg-primary hover:text-primary-foreground hover:shadow-xl hover:scale-110 focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:outline-none"
+                    className="group p-3 sm:p-4 rounded-full bg-background border border-border text-foreground shadow transition-all duration-200 hover:bg-primary hover:text-primary-foreground hover:shadow-xl hover:scale-110 focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:outline-none"
                     >
                     {icon}
                     </a>

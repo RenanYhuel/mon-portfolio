@@ -19,7 +19,7 @@ export function Typewriter({ words }: { words: string[] }) {
     const timeout = setTimeout(() => {
       setSubIndex((prev) => prev + (reverse ? -1 : 1));
       setDisplayed(words[index].substring(0, subIndex));
-    }, reverse ? 30 : 70);
+    }, reverse ? 60 : 120); // ralentissement ici
     return () => clearTimeout(timeout);
   }, [subIndex, index, reverse, words]);
 
