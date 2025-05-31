@@ -45,17 +45,17 @@ const socialLinks = [
   {
     href: "https://github.com/RenanYhuel",
     label: "GitHub",
-    icon: <Github size={20} className="text-primary" />,
+    icon: <Github size={20} className="transition-colors text-primary group-hover:text-primary-foreground" />,
   },
   {
     href: "https://www.linkedin.com/in/renan-yhuel-764aab323/",
     label: "LinkedIn",
-    icon: <Linkedin size={20} className="text-primary" />,
+    icon: <Linkedin size={20} className="transition-colors text-primary group-hover:text-primary-foreground" />,
   },
   {
     href: "mailto:renan@stagey.fr",
     label: "Mail",
-    icon: <Mail size={20} className="text-primary" />,
+    icon: <Mail size={20} className="transition-colors text-primary group-hover:text-primary-foreground" />,
   },
 ];
 
@@ -112,31 +112,24 @@ export default function Hero() {
           </div>
           {/* Réseaux sociaux stylisés */}
           <div className="flex flex-row gap-4 mt-8">
-            <a
-              href="https://github.com/RenanYhuel"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-              className="p-3 rounded-full bg-background border border-border hover:bg-primary hover:text-primary-foreground hover:brightness-95 dark:hover:brightness-110 text-foreground transition"
-            >
-              <Github size={26} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/renan-yhuel-764aab323/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              className="p-3 rounded-full bg-background border border-border hover:bg-primary hover:text-primary-foreground hover:brightness-95 dark:hover:brightness-110 text-foreground transition"
-            >
-              <Linkedin size={26} />
-            </a>
-            <a
-              href="mailto:renan@stagey.fr"
-              aria-label="Mail"
-              className="p-3 rounded-full bg-background border border-border hover:bg-primary hover:text-primary-foreground hover:brightness-95 dark:hover:brightness-110 text-foreground transition"
-            >
-              <Mail size={26} />
-            </a>
+            {socialLinks.map(({ href, label, icon }) => (
+              <Tooltip key={label}>
+                <TooltipTrigger asChild>
+                  <a
+                    href={href}
+                    target={href.startsWith('http') ? '_blank' : undefined}
+                    rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    aria-label={label}
+                    className="group p-3 rounded-full bg-background border border-border text-foreground shadow transition-all duration-200 hover:bg-primary hover:text-primary-foreground hover:shadow-xl hover:scale-110 focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:outline-none"
+                  >
+                    {icon}
+                  </a>
+                </TooltipTrigger>
+                <TooltipContent side="top" className="text-sm font-semibold">
+                  {label}
+                </TooltipContent>
+              </Tooltip>
+            ))}
           </div>
         </div>
       </div>
