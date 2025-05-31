@@ -17,8 +17,7 @@ import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover
 import { Skeleton } from "@/components/ui/skeleton";
 import { Separator } from "@/components/ui/separator";
 import { Slider } from "@/components/ui/slider";
-import HeroSection from "@/components/Hero";
-import SkillsSection from "@/components/SkillsSection";
+
 
 
 export default function Main() {

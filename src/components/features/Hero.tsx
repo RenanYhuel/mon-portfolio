@@ -1,69 +1,12 @@
 "use client";
-import { useEffect, useState } from "react";
-import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
+import { Typewriter } from "./hero/Typewriter";
+import { SocialLinks } from "./hero/SocialLinks";
+import { Values } from "./hero/Values";
 import { Button } from "@/components/ui/button";
-import { MapPin, Globe, Zap, Mail, Github, Linkedin, LogIn, Lightbulb, Sparkles, UserCheck, PenTool } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-
-// Typewriter maison
-function Typewriter({ words }: { words: string[] }) {
-  const [index, setIndex] = useState(0);
-  const [displayed, setDisplayed] = useState("");
-  const [subIndex, setSubIndex] = useState(0);
-  const [reverse, setReverse] = useState(false);
-
-  useEffect(() => {
-    if (subIndex === words[index].length + 1 && !reverse) {
-      setTimeout(() => setReverse(true), 1200);
-      return;
-    }
-    if (subIndex === 0 && reverse) {
-      setReverse(false);
-      setIndex((prev) => (prev + 1) % words.length);
-      return;
-    }
-    const timeout = setTimeout(() => {
-      setSubIndex((prev) => prev + (reverse ? -1 : 1));
-      setDisplayed(words[index].substring(0, subIndex));
-    }, reverse ? 30 : 70);
-    return () => clearTimeout(timeout);
-  }, [subIndex, index, reverse, words]);
-
-  useEffect(() => {
-    setDisplayed(words[index].substring(0, subIndex));
-  }, [subIndex, index, words]);
-
-  return (
-    <span className="text-primary font-bold">
-      {displayed}
-      <span className="animate-pulse">|</span>
-    </span>
-  );
-}
-
-const socialLinks = [
-  {
-    href: "https://github.com/RenanYhuel",
-    label: "GitHub",
-    icon: <Github size={20} className="transition-colors text-primary group-hover:text-primary-foreground" />,
-  },
-  {
-    href: "https://www.linkedin.com/in/renan-yhuel-764aab323/",
-    label: "LinkedIn",
-    icon: <Linkedin size={20} className="transition-colors text-primary group-hover:text-primary-foreground" />,
-  },
-  {
-    href: "mailto:renan@stagey.fr",
-    label: "Mail",
-    icon: <Mail size={20} className="transition-colors text-primary group-hover:text-primary-foreground" />,
-  },
-];
 
 export default function Hero() {
   return (
-    <section
-      className="relative flex items-center justify-center min-h-[90vh] w-full overflow-hidden bg-transparent"
-    >
+    <section className="relative flex items-center justify-center min-h-[90vh] w-full overflow-hidden bg-transparent">
       <div className="absolute inset-0 w-full h-full pointer-events-none select-none" aria-hidden="true">
         {/* Optionnel: un léger dégradé ou effet visuel de fond */}
       </div>
@@ -111,39 +54,8 @@ export default function Hero() {
                 </Button>
               </a>
             </div>
-            {/* Valeurs optionnelles */}
-            <div className="flex flex-col [@media(min-width:1300px)]:flex-row gap-4 [@media(min-width:1300px)]:gap-6 mt-6 md:mt-8 w-full items-start [@media(max-width:769px)]:items-center [@media(min-width:1300px)]:items-start animate-fade-in-up" style={{animationDelay: '0.7s', animationFillMode: 'both'}}>
-              <div className="flex items-center gap-2 text-primary">
-                <Lightbulb size={22} /> <span className="text-sm sm:text-base text-muted-foreground">Créativité pragmatique</span>
-              </div>
-              <div className="flex items-center gap-2 text-primary">
-                <UserCheck size={22} /> <span className="text-sm sm:text-base text-muted-foreground">Collaboration sincère</span>
-              </div>
-              <div className="flex items-center gap-2 text-primary">
-                <PenTool size={22} /> <span className="text-sm sm:text-base text-muted-foreground">Design Centré Utilisateur</span>
-              </div>
-            </div>
-            {/* Réseaux sociaux stylisés */}
-            <div className="flex flex-row gap-3 sm:gap-4 mt-6 md:mt-8 animate-fade-in-up justify-center md:justify-start" style={{animationDelay: '0.8s', animationFillMode: 'both'}}>
-              {socialLinks.map(({ href, label, icon }) => (
-                <Tooltip key={label}>
-                  <TooltipTrigger asChild>
-                    <a
-                      href={href}
-                      target={href.startsWith('http') ? '_blank' : undefined}
-                      rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      aria-label={label}
-                      className="group p-2 sm:p-3 rounded-full bg-background border border-border text-foreground shadow transition-all duration-200 hover:bg-primary hover:text-primary-foreground hover:shadow-xl hover:scale-110 focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:outline-none"
-                    >
-                      {icon}
-                    </a>
-                  </TooltipTrigger>
-                  <TooltipContent side="top" className="text-xs sm:text-sm font-semibold">
-                    {label}
-                  </TooltipContent>
-                </Tooltip>
-              ))}
-            </div>
+            <Values />
+            <SocialLinks />
           </div>
         </div>
       </div>
