@@ -53,7 +53,7 @@ export default function SkillsSection() {
 				</div>
 				<div className="flex gap-6 overflow-x-auto flex-nowrap">
 					{columns.map((col, colIdx) => (
-						<div key={colIdx} className="flex-1 flex flex-col min-w-[280px]">
+						<div key={colIdx} className="flex-1 flex flex-col min-w-[290px]">
 							{col.map((cat) => (
 								<SkillCard key={cat.title} category={cat} />
 							))}

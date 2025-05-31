@@ -1,5 +1,5 @@
-import { Skill } from "./skills-data";
 import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
+import { Skill } from "./SkillsData";
 
 function SkillLevel({ level }: { level: number }) {
   return (
@@ -13,7 +13,7 @@ function SkillLevel({ level }: { level: number }) {
 
 export default function SkillItem({ skill }: { skill: Skill }) {
   return (
-    <li className="flex items-center gap-4 min-h-[88px]">
+    <li className="flex gap-4 h-[88px] items-center">
       <Tooltip>
         <TooltipTrigger asChild>
           <img
@@ -25,12 +25,16 @@ export default function SkillItem({ skill }: { skill: Skill }) {
         </TooltipTrigger>
         <TooltipContent>{skill.name}</TooltipContent>
       </Tooltip>
-      <div className="flex-1 flex flex-col justify-between min-h-[64px]">
-        <div className="flex items-center gap-2">
-          <span className="font-semibold text-foreground break-words">{skill.name}</span>
+      <div className="flex-1 flex flex-col justify-center min-h-[48px]">
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+          <span className="font-semibold text-foreground break-words leading-tight">
+            {skill.name}
+          </span>
           <SkillLevel level={skill.level} />
         </div>
-        <p className="text-sm text-muted-foreground mt-1 break-words">{skill.description}</p>
+        <p className="text-sm text-muted-foreground mt-1 leading-snug break-words line-clamp-2">
+          {skill.description}
+        </p>
       </div>
     </li>
   );
