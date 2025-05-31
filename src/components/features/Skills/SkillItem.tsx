@@ -1,6 +1,5 @@
 import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
-import { Skill } from "./SkillData";
-
+import { Skill } from "@/components/features/skills/SkillData";
 
 function SkillLevel({ level }: { level: number }) {
   return (
@@ -11,6 +10,7 @@ function SkillLevel({ level }: { level: number }) {
     </div>
   );
 }
+
 
 export default function SkillItem({ skill }: { skill: Skill }) {
   return (

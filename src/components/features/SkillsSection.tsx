@@ -1,8 +1,7 @@
 "use client";
 import React from "react";
-import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
-import SkillCard from "./skills/SkillCard";
-import { skillCategories } from "./skills/SkillData";
+import SkillCard from "@/components/features/skills/SkillCard";
+import { skillCategories, SkillCategory } from "@/components/features/skills/SkillData";
 
 
 interface Skill {
@@ -11,30 +10,13 @@ interface Skill {
 	level: number;
 	description: string;
 }
-interface SkillCategory {
+interface LocalSkillCategory {
 	title: string;
 	skills: Skill[];
 }
 
-function SkillLevel({ level }: { level: number }) {
-	return (
-		<div className="flex gap-0.5" aria-label={`Niveau ${level} sur 5`}>
-			{[...Array(5)].map((_, i) => (
-				<span
-					key={i}
-					className={
-						i < level ? "text-yellow-400" : "text-gray-300"
-					}
-				>
-					★
-				</span>
-			))}
-		</div>
-	);
-}
-
 export default function SkillsSection() {
-	const columns: SkillCategory[][] = [
+	const columns: LocalSkillCategory[][] = [
 		[skillCategories[0]], // Frontend
 		[skillCategories[1]], // Backend
 		[skillCategories[2], skillCategories[3]], // Bases de données puis Outils & Cloud
