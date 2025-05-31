@@ -8,6 +8,7 @@ import { Menu, X, Sun, Moon, ArrowUpRight, Home, FolderKanban, MessageCircle, Ma
 const NAV_LINKS = [
 	{ href: "#accueil", label: "Accueil", icon: <Home size={18} /> },
 	{ href: "#projets", label: "Projets", icon: <FolderKanban size={18} /> },
+	{ href: "#competences", label: "Compétences", icon: <Settings size={18} /> },
 	{ href: "#avis", label: "Avis", icon: <MessageCircle size={18} /> },
 	{ href: "#contact", label: "Contact", icon: <Mail size={18} /> },
 	{ href: "https://sandbox.renanyhuel.com", label: "Démo", icon: <PlayCircle size={18} />, external: true },
@@ -16,6 +17,7 @@ const NAV_LINKS = [
 const NAV_LINKS_MOBILE = [
 	{ href: "#accueil", label: "Accueil", icon: <Home size={18} /> },
 	{ href: "#projets", label: "Projets", icon: <FolderKanban size={18} /> },
+	{ href: "#competences", label: "Compétences", icon: <Settings size={18} /> },
 	{ href: "#avis", label: "Avis", icon: <MessageCircle size={18} /> },
 	{ href: "#contact", label: "Contact", icon: <Mail size={18} /> },
 	{ href: "https://sandbox.renanyhuel.com", label: "Démo", icon: <PlayCircle size={18} />, external: true },

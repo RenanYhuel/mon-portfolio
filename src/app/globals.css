@@ -194,3 +194,31 @@
 }
 .animate-bounce-in { animation: bounce-in 0.7s cubic-bezier(.4,0,.2,1) both; }
 .animate-avatar-pop { animation: bounce-in 0.8s 0.1s both; }
+@keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+.animate-marquee { animation: marquee 18s linear infinite; }
+@keyframes marquee-reverse { 0% { transform: translateX(0); } 100% { transform: translateX(50%); } }
+.animate-marquee-reverse { animation: marquee-reverse 22s linear infinite; }
+@keyframes slide-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+.animate-slide-left {
+  animation: slide-left 40s linear infinite;
+}
+@keyframes skills-infinite {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+.animate-skills-infinite {
+  animation: skills-infinite 6s linear infinite;
+}
+
+@layer utilities {
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-marquee {
+    animation: marquee 35s linear infinite;
+  }
+}
