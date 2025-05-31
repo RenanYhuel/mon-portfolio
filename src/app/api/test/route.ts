@@ -1,8 +1,7 @@
-import { PrismaClient } from "@/generated/prisma";
 import { errorResponse, successResponse } from "@/lib/utils";
+import { prisma } from "@/lib/prismaClient";
 
 
-const prisma = new PrismaClient();
 
 export async function GET() {
     const meta = {
@@ -14,7 +13,7 @@ export async function GET() {
     try {
         await prisma.$connect();
         await prisma.$disconnect();
-        return Response.json(successResponse(null, meta));
+        return Response.json(successResponse(undefined, meta));
     } catch (error) {
         return Response.json(
             errorResponse(
