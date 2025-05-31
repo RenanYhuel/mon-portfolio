@@ -68,7 +68,9 @@ export default function Hero() {
         {/* Texte principal */}
         <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left gap-6">
           <h1 className="text-4xl md:text-6xl font-extrabold text-foreground leading-tight">
-            Développeur Web <span className="text-primary">Créatif</span>
+            Développeur Web <span className="text-primary">
+              <Typewriter words={["Créatif", "Passionné", "Curieux", "Rigoureux", "Innovant", "Polyvalent"]} />
+            </span>
           </h1>
           <h2 className="text-xl md:text-2xl text-muted-foreground font-medium">
             Je conçois des expériences web{" "}
