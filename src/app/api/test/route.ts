@@ -1,15 +1,30 @@
 import { PrismaClient } from '@/generated/prisma';
-import { NextResponse } from 'next/server';
+import { successResponse, errorResponse } from '@/lib/utils';
 
 const prisma = new PrismaClient();
 
 export async function GET() {
-  try {
-    await prisma.$connect();
-    await prisma.$disconnect();
-    return NextResponse.json({ success: true, message: 'Connexion à la base de données réussie.' });
-  } catch (error) {
-    const message = error instanceof Error ? error.message : 'Unknown error';
-    return NextResponse.json({ success: false, error: message }, { status: 500 });
-  }
+    const meta = {
+        request_id: crypto.randomUUID(),
+        api_version: 'v1.0.0',
+        docs_url: null,
+        endpoint: '/api/test',
+    };
+    try {
+        await prisma.$connect();
+        await prisma.$disconnect();
+        return Response.json(successResponse(null, meta));
+    } catch (error) {
+        return Response.json(
+            errorResponse(
+                {
+                    code: 'DB_CONNECTION_ERROR',
+                    message: error instanceof Error ? error.message : 'Unknown error',
+                    stack: process.env.NODE_ENV === 'development' && error instanceof Error ? error.stack : undefined,
+                },
+                meta
+            ),
+            { status: 500 }
+        );
+    }
 }
