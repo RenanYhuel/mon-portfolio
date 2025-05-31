@@ -120,7 +120,7 @@ export default function SkillsSection() {
 	return (
 		<section
 			id="competences"
-			className="w-full py-20 bg-gradient-to-b from-background to-muted/60"
+			className="w-full py-20"
 		>
 			<div className="max-w-5xl mx-auto px-4">
 				<div className="mb-12 text-center">

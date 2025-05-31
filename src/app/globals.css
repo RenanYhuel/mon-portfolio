@@ -160,6 +160,9 @@
     @apply bg-background text-foreground;
     box-sizing: border-box;
     position: relative;
+    background: linear-gradient(to bottom, var(--background), var(--muted) 90%);
+    font-family: 'Poppins', 'Montserrat', 'Rubik', sans-serif;
+    color: #f3f4f6;
   }
   body::before {
     content: '';
