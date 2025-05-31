@@ -1,5 +1,5 @@
 import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
-import { Skill } from "@/components/features/skills/SkillData";
+import { Skill } from "../../../components/features/skills/SkillData";
 
 function SkillLevel({ level }: { level: number }) {
   return (
