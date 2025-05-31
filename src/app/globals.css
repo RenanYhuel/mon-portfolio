@@ -1,8 +1,10 @@
+/* --- Tailwind Imports --- */
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @tailwind utilities;
 
+/* --- ShadCN Variables (CSS Custom Properties) --- */
 @custom-variant dark (&:is(.dark *));
 
 html, body {
@@ -82,6 +84,7 @@ html, body {
   --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
 }
 
+/* --- Thème Sombre --- */
 .dark {
   --background: oklch(0.2046 0 0);
   --foreground: oklch(0.9219 0 0);
@@ -129,6 +132,7 @@ html, body {
   --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
 }
 
+/* --- Thème Inline --- */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -182,6 +186,7 @@ html, body {
   --shadow-2xl: var(--shadow-2xl);
 }
 
+/* --- Base Layer --- */
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -212,6 +217,7 @@ html, body {
   }
 }
 
+/* --- Animations --- */
 /* Animations Hero section */
 @keyframes fade-in-up {
   0% { opacity: 0; transform: translateY(40px); }
@@ -238,6 +244,7 @@ html, body {
 }
 .animate-skills-infinite { animation: skills-infinite 6s linear infinite; }
 
+/* --- Utilitaires --- */
 @layer utilities {
   @keyframes marquee {
     0% { transform: translateX(0); }
