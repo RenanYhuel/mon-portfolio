@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
-import { skillCategories } from "./skills/SkillsData";
 import SkillCard from "./skills/SkillCard";
+import { skillCategories } from "./skills/SkillsData";
 
 
 interface Skill {

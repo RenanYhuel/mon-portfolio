@@ -1,6 +1,7 @@
 import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
 import { Skill } from "./SkillsData";
 
+
 function SkillLevel({ level }: { level: number }) {
   return (
     <div className="flex gap-0.5" aria-label={`Niveau ${level} sur 5`}>
