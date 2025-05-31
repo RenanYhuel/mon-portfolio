@@ -2,7 +2,7 @@
 import React from "react";
 import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
 import SkillCard from "./skills/SkillCard";
-import { skillCategories } from "./skills/SkillsData";
+import { skillCategories } from "./skills/SkillData";
 
 
 interface Skill {

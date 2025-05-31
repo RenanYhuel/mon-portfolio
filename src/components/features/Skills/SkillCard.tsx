@@ -1,5 +1,5 @@
 import SkillItem from "./SkillItem";
-import { SkillCategory } from "./SkillsData";
+import { SkillCategory } from "./SkillData";
 
 export default function SkillCard({ category }: { category: SkillCategory }) {
   return (
