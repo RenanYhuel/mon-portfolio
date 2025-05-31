@@ -102,7 +102,7 @@ export default function Navbar() {
 								<span className="font-extrabold text-xl md:text-2xl tracking-widest uppercase font-sans" style={{ color: 'var(--foreground)' }}>RenanYhuel</span>
 							</Link>
 							{/* Desktop menu */}
-							<ul className="hidden [@media(max-width:1099px)]:hidden [@media(min-width:1100px)]:flex gap-6 items-center">
+							<ul className="hidden [@media(max-width:1299px)]:hidden [@media(min-width:1300px)]:flex gap-6 items-center">
 								{NAV_LINKS.map(link => (
 									<li key={link.href}>
 										{link.external ? (
@@ -136,7 +136,7 @@ export default function Navbar() {
 								<button
 									aria-label="Basculer le thème clair/sombre"
 									onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-									className="hidden [@media(max-width:1099px)]:hidden [@media(min-width:1100px)]:flex items-center justify-center w-10 h-10 rounded-full border border-border bg-muted hover:bg-accent transition-colors focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer"
+									className="hidden [@media(max-width:1299px)]:hidden [@media(min-width:1300px)]:flex items-center justify-center w-10 h-10 rounded-full border border-border bg-muted hover:bg-accent transition-colors focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer"
 									type="button"
 								>
 									{theme === "dark" ? <Moon size={20} className="text-primary" /> : <Sun size={20} className="text-primary" />}
@@ -145,7 +145,7 @@ export default function Navbar() {
 								<Button
 									variant="ghost"
 									size="sm"
-									className="flex items-center px-3 [@media(min-width:1100px)]:hidden"
+									className="flex items-center px-3 [@media(min-width:1300px)]:hidden"
 									aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
 									onClick={() => setMenuOpen(v => !v)}
 								>
