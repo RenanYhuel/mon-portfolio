@@ -1,5 +1,6 @@
-import { PrismaClient } from '../../../generated/prisma';
-import { successResponse, errorResponse } from '../../../lib/utils';
+import { PrismaClient } from "@/generated/prisma";
+import { errorResponse, successResponse } from "@/lib/utils";
+
 
 const prisma = new PrismaClient();
 

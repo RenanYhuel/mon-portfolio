@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import SkillCard from "@/components/features/skills/SkillCard";
-import { skillCategories } from "../../components/features/skills/SkillData";
+import { skillCategories } from "./competences/SkillData";
+import SkillCard from "./competences/SkillCard";
 
 
 interface Skill {
