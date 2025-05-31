@@ -1,44 +1,33 @@
-import Link from "next/link";
-import { Mail } from "lucide-react";
+import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
+import { socialLinks } from "@/components/features/hero/SocialLinkData";
 
 export default function Footer() {
   return (
-    <footer className="w-full px-4 py-4 md:px-8 md:py-4 flex items-center justify-between border border-border bg-transparent text-muted-foreground text-sm rounded-2xl shadow-xl">
-      <div className="mb-2 md:mb-0 md:text-left w-full md:w-auto">
-        &copy; {new Date().getFullYear()} Renan Yhuel.{" "}
-        <span className="block md:inline">Tous droits réservés.</span>
-      </div>
-      <div className="flex items-center gap-4">
-        <a
-          href="mailto:contact@renanyhuel.com"
-          className="flex items-center justify-center w-10 h-10 rounded-full border border-border bg-muted hover:bg-accent transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
-          aria-label="Contact"
-        >
-          <Mail size={20} className="text-primary" />
-        </a>
-        <a
-          href="https://github.com/RenanYhuel"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center w-10 h-10 rounded-full border border-border bg-muted hover:bg-accent transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
-          aria-label="GitHub"
-        >
-          <svg
-            width="20"
-            height="20"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            className="text-primary"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.184 6.839 9.504.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.091-.647.35-1.088.636-1.339-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.987 1.029-2.686-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.699 1.028 1.593 1.028 2.686 0 3.847-2.338 4.695-4.566 4.944.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.749 0 .267.18.577.688.479C19.138 20.2 22 16.447 22 12.021 22 6.484 17.523 2 12 2Z"
-            />
-          </svg>
-        </a>
+    <footer className="w-full flex justify-center pt-8 pb-8">
+      <div className="w-full max-w-5xl inline-flex rounded-full border border-[rgba(0,0,0,0.06)] bg-gradient-to-r from-card/90 via-card/80 to-card/90 bg-card/80 shadow-lg px-8 py-3 items-center gap-8 pointer-events-auto transition-all duration-300 justify-between mx-auto">
+        <span className="font-semibold text-base text-foreground select-none text-center md:text-left">
+          &copy; {new Date().getFullYear()} Renan Yhuel. Tous droits réservés.
+        </span>
+        <div className="flex flex-row gap-3">
+          {socialLinks.map(({ href, label, icon }) => (
+            <Tooltip key={label}>
+              <TooltipTrigger asChild>
+                <a
+                  href={href}
+                  target={href.startsWith("http") ? "_blank" : undefined}
+                  rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  aria-label={label}
+                  className="group p-1.5 sm:p-2 rounded-full bg-background border border-border text-foreground shadow transition-all duration-200 hover:bg-primary hover:text-primary-foreground hover:shadow-xl hover:scale-110 focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:outline-none"
+                >
+                  {icon}
+                </a>
+              </TooltipTrigger>
+              <TooltipContent side="top" className="text-xs sm:text-sm font-semibold">
+                {label}
+              </TooltipContent>
+            </Tooltip>
+          ))}
+        </div>
       </div>
     </footer>
   );
