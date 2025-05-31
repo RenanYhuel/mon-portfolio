@@ -51,9 +51,9 @@ export default function SkillsSection() {
 						concevoir des applications web modernes, performantes et maintenables.
 					</p>
 				</div>
-				<div className="flex gap-6">
+				<div className="flex gap-6 overflow-x-auto flex-nowrap">
 					{columns.map((col, colIdx) => (
-						<div key={colIdx} className="flex-1 flex flex-col">
+						<div key={colIdx} className="flex-1 flex flex-col min-w-[280px]">
 							{col.map((cat) => (
 								<SkillCard key={cat.title} category={cat} />
 							))}
